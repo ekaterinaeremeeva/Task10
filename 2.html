@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>​
+    <p><input type="button" value="Information about screen" id="btn"></p>
+    <p>разрешение по ширине <input type="screen-width" id="screen-width" style="width: 150px;"></p>
+    <p>разрешение по высоте <input type="screen-height" id="screen-height" style="width: 150px;"></p>
+    <p>ширина рабочей области <input type="screen-avail-width" id="screen-avail-width" style="width: 150px;"></p>
+    <p>высота рабочей области <input type="screen-avail-height" id="screen-avail-height" style="width: 150px;"></p>
+    <a href="./3.html">next page</a>
+    <p><a href="##" id="back">back</a></p>
+</body>
+<script>
+    document.querySelector("#btn").addEventListener('click', function () {
+    var text = document.querySelector('#screen-width');
+    text.value = window.screen.width;
+    var text = document.querySelector('#screen-height');
+    text.value = window.screen.height;
+    var text = document.querySelector('#screen-avail-width');
+    text.value = window.screen.availWidth;
+    var text = document.querySelector('#screen-avail-height');
+    text.value = window.screen.availHeight;
+    });
+    document.querySelector("#back").addEventListener('click', function () {
+        history.go(-1); 
+        return false;
+    });
+</script>
+</html>
