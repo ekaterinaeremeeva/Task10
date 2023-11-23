@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p><a href="./1.html" id="inf">Information</a></p>​
+    <form>
+        <div>
+            <label for="accrued">Начислено</label>
+            <input id="accrued" name="accrued" value="" />
+        </div>
+        <div>
+            <label for="withheld">Удержано</label>
+            <input id="withheld" name="withheld" value="" />
+        </div>
+        <div>
+            <label for="total">Итого</label>
+            <input type="text" id="total" value="" />
+        </div>
+      </form>
+      <p><input type="button" value="Подсчитать" id="btn"></p>
+    <p><a href="##" id="back">back</a></p>
+</body>
+<script>
+    document.querySelector("#inf").addEventListener('click', (event) => {
+    event.preventDefault()
+    });
+    document.querySelector("#btn").onclick=function() {
+        var accrued = document.querySelector("input[name='accrued']").value;
+        var withheld = document.querySelector("input[name='withheld']").value;
+        var result = accrued - withheld;
+        document.querySelector("#total").value = result;
+    };
+    document.querySelector("#back").addEventListener('click', function () {
+        history.go(-1); 
+        return false;
+    });
+</script>
+</html>
